@@ -5,11 +5,11 @@ import productRouter from "./routes/productRouter.js";
 import userRouter from "./routes/userRouter.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config()
 
 const app = express();
 
-const mongodbUrl = "mongodb+srv://admin:123@cluster0.8cdbo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const mongodbUrl = "";
 
 mongoose.connect(mongodbUrl,{})
 
