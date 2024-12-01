@@ -24,14 +24,7 @@ connection.once("open",()=>{
 
 app.use(bodyParser.json())
 
-app.use((req,res,next)=>{
-consloe.log(req)
-
-
-}
-    
-)
-
+ 
 app.use("/api/products",productRouter)
 
 app.use("/api/users",userRouter)

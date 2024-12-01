@@ -48,8 +48,10 @@ User.find({email: req.body.email}).then(
                 profilePicture : user.profilePicture
             },"cbc secret key-7973")
 
-            console.log(token)
-            
+            res.json({
+                message:"User logged in",
+                token: token
+            })
                 
             }else(
                 res.json({
