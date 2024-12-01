@@ -8,11 +8,11 @@ export function createUser (req,res){
 
     //console.log(req.user)
 
-    const newUserdata =  req.body
+    const newUserData =  req.body
 
-    newUserdata.password = bcrypt.hashSync(newUserdata.password,10)
+    newUserData.password = bcrypt.hashSync(newUserData.password,10)
 
-    const user = new User(newUserdata)
+    const user = new User(newUserData)
 
     user.save().then(()=>{
         res.json({
@@ -48,10 +48,8 @@ User.find({email: req.body.email}).then(
                 profilePicture : user.profilePicture
             },"cbc secret key-7973")
 
-            res.json({
-                message:"User logged in",
-                token: token
-            })
+            console.log(token)
+            
                 
             }else(
                 res.json({

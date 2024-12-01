@@ -28,7 +28,7 @@ app.use((req,res,next)=>{
 consloe.log(req)
 
 
-   }
+}
     
 )
 
