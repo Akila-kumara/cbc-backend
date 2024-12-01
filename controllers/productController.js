@@ -25,6 +25,13 @@ export function createProduct(req,res){
         res.json({
             message : "You are not logged in"
         })
+        return
+    }
+    if(req.user.type !="admin"){
+        res.json({
+            message : "You are not an admin"
+        })
+        return
     }
 
     const product = new Product(req.body)
