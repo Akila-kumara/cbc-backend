@@ -46,7 +46,7 @@ User.find({email: req.body.email}).then(
                 isBlocked : user. isBlocked,
                 type : user.type,
                 profilePicture : user.profilePicture
-            },"cbc secret key-7973")
+            },process.env.SECRET)
 
             res.json({
                 message:"User logged in",
