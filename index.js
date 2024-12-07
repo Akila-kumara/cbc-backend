@@ -34,8 +34,7 @@ if(token != null){
 }
 next()
 
-}
-)
+})
  
 app.use("/api/products",productRouter)
 
