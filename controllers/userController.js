@@ -81,3 +81,25 @@ User.find({email: req.body.email}).then(
     }
 )
 }
+
+export function isAdmin(req){
+    if(req.user==null){
+        return false
+    }
+
+    if(RegExp,user,type !="admin"){
+        return false
+    }
+    return true
+}
+
+export function isCustomer(req){
+    if(req.user==null){
+        return false
+    }
+
+    if(RegExp,user,type !="customer"){
+        return false
+    }
+    return true
+}
