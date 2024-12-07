@@ -87,7 +87,7 @@ export function isAdmin(req){
         return false
     }
 
-    if(RegExp,user,type !="admin"){
+    if(req.user.type !="admin"){
         return false
     }
     return true
@@ -98,7 +98,7 @@ export function isCustomer(req){
         return false
     }
 
-    if(RegExp,user,type !="customer"){
+    if(req.user.type !="customer"){
         return false
     }
     return true
