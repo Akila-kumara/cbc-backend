@@ -3,9 +3,10 @@ import Product from "../models/product.js";
 import {isAdmin} from "./userController.js";
 
 export function createProduct(req,res){
+
     if(!isAdmin(req)) {
-        req.json({
-            message :" Please login as administrator to add products"
+        res.json({
+            message : "Please login as administrator to add products"
         })
         return
     }
