@@ -6,6 +6,7 @@ import Product from "./models/product.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import productRouter from "./routes/productRouter.js";
+import orderRouter from "./routes/orderRouter.js";
 dotenv.config()
 
 const app = express();
@@ -39,6 +40,7 @@ next()
  
 app.use("/api/users",userRouter)
 app.use("/api/products",productRouter)
+app.use("/api/orders",orderRouter)
 
 app.listen(5000, () => {
     console.log("Server is running on port 5000");
