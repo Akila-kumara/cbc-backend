@@ -1,7 +1,11 @@
 import Order from "../models/order.js"
 
+import {isCustomer} from "./userController.js"; 
+
 export async function createOrder(req,res){
+
      if(!isCustomer){
+
         res.json({
             message : "Please login as customer to create orders"
         })
@@ -32,7 +36,10 @@ export async function createOrder(req,res){
         newOrderData.orderId = orderId
         newOrderData.email = req.user.email
 
-        await orderId.save()
+        const order = new Order(newOrderData);
+
+        await order.save();
+
 
         res.json ({
             message : "Order Created"
