@@ -50,12 +50,16 @@ export async function createOrder(req,res){
             return
         } 
         newProductArray[i] = {
-            productId : product.productId,
+            name : product.productName,
             price : product.price,
             quantity : newOrderData.orderedItems[i].quantity,
             image : product.image[0]
         }
     }
+
+        console.log(newProductArray)
+
+        newOrderData.orderedItems = newProductArray
             
         newOrderData.orderId = orderId
         newOrderData.email = req.user.email
