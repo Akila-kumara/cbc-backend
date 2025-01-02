@@ -69,7 +69,14 @@ User.find({email: req.body.email}).then(
 
             res.json({
                 message:"User logged in",
-                token: token
+                token: token,
+                users: {
+                    firstName : user.firstName,
+                    lastName : user.lastName,
+                    profilePicture : user.profilePicture,
+                    email : user.email,
+                    type : user.type
+                }
             })
                 
             }else(
