@@ -36,7 +36,7 @@ export function getProducts(req,res){
 
 export function deleteProduct(req,res){
     if(!isAdmin(req)) {
-        res.json({   
+        res.status(403).json({   
             message : "Please login as administrator to delete products"
         })
         return
@@ -47,6 +47,10 @@ export function deleteProduct(req,res){
     Product.deleteOne({productId : productId}).then(()=>{    
         res.json({
             message : "Product deleted successfully"
+        })
+    }).catch((error)=>{
+        res.status(403).json({
+            message : error
         })
     })
 }   
